@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgres
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  host: postgres_db
+  user: daily_activity_dev
+  password: postgres
+  database: daily_activity_dev
+  port: 5432
+
+test:
+  <<: *default
+  host: localhost
+  user: daily_activity_test
+  database: daily_activity_test
+  port: 5432
