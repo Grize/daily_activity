@@ -15,3 +15,10 @@ group :development do
   gem 'rubocop'
 end
 
+group :test do
+  gem 'rspec'
+  gem 'simplecov'
+  gem 'rom-factory'
+  gem 'webmock'
+  gem 'database_cleaner-sequel'
+end
