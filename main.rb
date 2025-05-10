@@ -23,3 +23,11 @@ class App < Sinatra::Base
     puts 'Hello world!'
   end
 end
+
+post 'day' do
+  request.body.rewind
+  params = JSON.parse(request.body.read)
+  record = Services::Days::Create.new(params).call
+
+  redirect to("day/#{record.id}")
+end
